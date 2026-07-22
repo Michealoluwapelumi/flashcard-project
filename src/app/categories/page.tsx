@@ -36,7 +36,7 @@ export default function CategoriesPage() {
         </div>
 
         {selectedCategory && (
-          <Card className="border-primary/20 bg-gradient-to-br from-primary/10 via-surface to-secondary/10 p-4 sm:p-6">
+          <Card className="border-primary/20 bg-linear-to-br from-primary/10 via-surface to-secondary/10 p-4 sm:p-6">
             <CardHeader className="px-0 pb-3">
               <CardTitle className="text-lg">{selectedCategory.name}</CardTitle>
             </CardHeader>

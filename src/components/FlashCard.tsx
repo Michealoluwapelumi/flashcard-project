@@ -48,15 +48,15 @@ export function FlashCard({
         </div>
       </div>
 
-      <div className="relative h-[360px] w-full max-w-3xl [perspective:1200px] sm:h-[430px]">
+      <div className="relative h-90 w-full max-w-3xl perspective-distant sm:h-107.5">
         <motion.div
-          className="h-full w-full cursor-pointer [transform-style:preserve-3d]"
+          className="h-full w-full cursor-pointer transform-3d"
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           onClick={() => setIsFlipped((previous) => !previous)}
         >
-          <div className="absolute inset-0 h-full w-full [backface-visibility:hidden]">
-            <Card className="flex h-full flex-col justify-between border-primary/20 bg-gradient-to-br from-primary/10 via-surface to-secondary/10 p-6 shadow-xl sm:p-8">
+          <div className="absolute inset-0 h-full w-full backface-hidden">
+            <Card className="flex h-full flex-col justify-between border-primary/20 bg-linear-to-br from-primary/10 via-surface to-secondary/10 p-6 shadow-xl sm:p-8">
               <div className="space-y-4">
                 <span className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                   Question
@@ -73,8 +73,8 @@ export function FlashCard({
             </Card>
           </div>
 
-          <div className="absolute inset-0 h-full w-full [backface-visibility:hidden] [transform:rotateY(180deg)]">
-            <Card className="flex h-full flex-col justify-between border-accent/20 bg-gradient-to-br from-accent/10 via-surface to-primary/10 p-6 shadow-xl sm:p-8">
+          <div className="absolute inset-0 h-full w-full backface-hidden transform-[rotateY(180deg)]">
+            <Card className="flex h-full flex-col justify-between border-accent/20 bg-linear-to-br from-accent/10 via-surface to-primary/10 p-6 shadow-xl sm:p-8">
               <div className="space-y-4">
                 <span className="inline-flex w-fit rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
                   Answer

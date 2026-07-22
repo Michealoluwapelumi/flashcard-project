@@ -15,7 +15,7 @@ export function ProgressBar({ value = 0, label, className = "" }: ProgressBarPro
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <div className="h-full rounded-full bg-gradient-to-r from-accent to-primary transition-all duration-300" style={{ width: `${Math.min(value, 100)}%` }} />
+        <div className="h-full rounded-full bg-linear-to-r from-accent to-primary transition-all duration-300" style={{ width: `${Math.min(value, 100)}%` }} />
       </div>
     </div>
   );

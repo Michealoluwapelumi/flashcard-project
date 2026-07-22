@@ -53,12 +53,12 @@ export function CategoryCard({ category, index = 0 }: CategoryCardProps) {
     >
       <Link
         href={`/categories?category=${category.id}`}
-        className="group flex flex-col h-full rounded-[var(--radius-card)] bg-surface border border-border/60 p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+        className="group flex flex-col h-full rounded-(--radius-card) bg-surface border border-border/60 p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
         aria-label={`Browse ${category.name} flashcards`}
       >
         {/* Icon Container */}
         <div
-          className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}
+          className={`flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br ${gradient} mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}
         >
           <Icon className="h-5 w-5 text-white" aria-hidden="true" />
         </div>
