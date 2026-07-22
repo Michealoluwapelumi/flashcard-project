@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,7 +24,7 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navLinks = [
+  const navLinks: Array<{ href: Route; label: string; icon: typeof BookOpen }> = [
     { href: "/", label: "Home", icon: BookOpen },
     { href: "/categories", label: "Categories", icon: Layers },
     { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
@@ -36,10 +37,10 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-primary to-secondary text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-200">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-tr from-primary to-secondary text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-200">
             <Layers className="h-5 w-5" />
           </div>
-          <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <span className="text-xl font-bold tracking-tight bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
             DevCards
           </span>
         </Link>
